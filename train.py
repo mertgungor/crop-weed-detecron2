@@ -102,7 +102,7 @@ random_numbers = [random.randint(0, 1406) for _ in range(3)]
 for i in random_numbers:
     d = dataset_dicts[i]
     img = cv2.imread(d["file_name"])
-    segmentation_path = os.path.join("/home/mert/phenobench-baselines/PhenoBench-v100/PhenoBench/train/segmentation_mask", d["file_name"].split("/")[-1])
+    segmentation_path = os.path.join("PhenoBench-v100/PhenoBench/train/segmentation_mask", d["file_name"].split("/")[-1])
     visualizer = Visualizer(img[:, :, ::-1], metadata=weed_metadata, scale=0.5)
     out = visualizer.draw_dataset_dict(d)
     segmentation_img = cv2.imread(segmentation_path)
